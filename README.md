@@ -19,13 +19,13 @@
 | `css-architecture` | 프로젝트 **세팅**·CSS 정리 | 컴포넌트 성격 기준 파일 분할, 공통 vs 페이지 전용 판단, 로드 순서, `:root` 변수명 표준, 리셋 기준서 |
 | `static-site-includes` | **공통영역** 만들 때 | `loadInc` fetch 인클루드, 플레이스홀더 주석 규칙, 콜백 초기화, null 가드, 현재 메뉴 URL 자동 매칭 |
 | `scroll-reveal-motion` | **모션** 붙일 때 | `data-reveal` 그룹·개별, `threshold: 0` 고정 이유, `rootMargin` 타이밍, `prefers-reduced-motion`, 단계 플로우 화살표 |
-| `event-page-embed` | **에디터에 붙일** 페이지 | 단일 파일, 접두어 스코프, 호스트 템플릿 특이도 대응, 본문 필드 공유 시 PC/MO 분기, 폰트 서브셋, 날짜 리비전 |
+| `event-page-embed` | **에디터에 붙일** 페이지 | 단일 파일, 접두어 스코프, 호스트 header/footer 유지·대체 두 모드, 템플릿 특이도 대응, 본문 필드 공유 시 PC/MO 분기, 폰트 서브셋, 날짜 리비전 |
 
-다섯 개가 서로 겹치지 않게 트리거 문구를 시점 기준으로 갈라놓았습니다. 전부 설치해도 매번 다 로드되지는 않습니다.
+여섯 개가 서로 겹치지 않게 트리거 문구를 시점 기준으로 갈라놓았습니다. 전부 설치해도 매번 다 로드되지는 않습니다.
 
 > `web-publishing-workflow`는 **넘기는 쪽에서도** 쓸 수 있습니다. 4절의 "시안에 담기지 않는 것"(움직임·인터랙션·상태·실제 동작)이 기획서에서 빠지는 항목과 같아서, 화면 정의서나 요건 정리를 넘기기 전 점검용으로 뜹니다.
 
-> ⚠️ `event-page-embed`는 나머지와 **전제가 반대**입니다. 파일을 서버에 올리는 게 아니라 남의 CMS 본문에 블록을 붙여 넣는 작업이라, 파일 분할·공통 CSS·include가 전부 불가능합니다. 이 페이지에는 `css-architecture`·`static-site-includes`를 적용하지 않습니다 — 스킬 description에 명시해 두었습니다.
+> ⚠️ `event-page-embed`는 나머지와 **전제가 반대**입니다. 파일을 서버에 올리는 게 아니라 남의 CMS 본문에 블록을 붙여 넣는 작업이라, 파일 분할·공통 CSS·include가 전부 불가능합니다. 이 페이지에는 `css-architecture`·`static-site-includes`를 적용하지 않습니다. 다만 `html-layout-conventions`(네이밍·태그 깊이·CSS 작성)는 **그대로 적용**되고, "리셋이 하는 선언은 다시 쓰지 마라" 한 항목만 반대로 뒤집힙니다.
 
 ## 구조
 
@@ -71,6 +71,7 @@ jimnyyo/frontend-standards
 /plugin install css-architecture@frontend-standards
 /plugin install static-site-includes@frontend-standards
 /plugin install scroll-reveal-motion@frontend-standards
+/plugin install event-page-embed@frontend-standards
 ```
 
 설치 후 `/plugin` → **Marketplaces** 탭에서 `frontend-standards`를 선택해 **auto-update를 켜 두세요.** 서드파티 마켓플레이스는 자동 갱신이 기본으로 꺼져 있습니다.
