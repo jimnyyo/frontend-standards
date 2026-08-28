@@ -1,22 +1,22 @@
 ---
 name: css-architecture
-description: How to organize CSS files and define the shared foundation for a static site with no build tool — split stylesheets by component nature rather than by page, decide what is shared versus page-only, fix the load order, name design tokens on :root, and write the reset with `:where()` so every default has specificity 0. Use when setting up a new project's CSS, adding or splitting a stylesheet, deciding where a new component's rules belong, naming or auditing CSS variables, writing or fixing a reset, or when styles are colliding across pages. Not for how to write an individual rule — that is the conventions skill. [한글] 정적 사이트(빌드툴 없음)의 CSS 파일 구성과 공통 기반. "CSS 파일 어떻게 나눠", "이 스타일 어디에 넣어", "새 프로젝트 세팅", "basic.css", "common.css", "리셋 만들어줘", "CSS 변수", "디자인 토큰", "색상 변수 정리", "로드 순서", "스타일이 겹쳐", "다른 페이지에 영향 가", "특이도" 요청에 사용. 개별 규칙 작성법이 아니라 파일 단위 구성과 토큰·리셋 정의에 적용.
+description: How to organize CSS files and define the shared foundation for a static site with no build tool — split stylesheets by component nature rather than by page, decide what is shared versus page-only, fix the load order, name design tokens on :root, and write the reset with `:where()` so every default has specificity 0. Use when setting up a new project's CSS, adding or splitting a stylesheet, deciding where a new component's rules belong, naming or auditing CSS variables, writing or fixing a reset, or when styles are colliding across pages. Not for how to write an individual rule — that is the conventions skill. [한글] 빌드 도구 없는 정적 사이트에서 CSS 파일을 어떻게 나누고 리셋·디자인 토큰을 어디에 둘지. "CSS 파일 어떻게 나눠", "이 스타일 어디에 넣어", "새 프로젝트 세팅", "basic.css", "common.css", "리셋 만들어줘", "CSS 변수", "디자인 토큰", "색상 변수 정리", "로드 순서", "스타일이 겹쳐", "다른 페이지에 영향 가", "특이도" 요청에 사용. CSS 한 줄을 어떻게 쓰는지가 아니라 어느 파일에 둘지를 다룬다.
 ---
 
 # CSS architecture for build-tool-free static sites
 
 ## 요약 (Korean summary)
 
-CSS를 **어디에 둘지**와 **공통 기반을 어떻게 정의할지**의 규칙입니다. 규칙 하나를 어떻게 쓰는지는 `html-layout-conventions` 스킬에 있습니다.
+스타일을 **어느 파일에 둘지** 정하는 규칙입니다. 규칙 한 줄을 어떻게 쓰는지는 `html-layout-conventions` 스킬에 있습니다.
 
 | 절 | 핵심 내용 |
 |---|---|
 | 1. File split | 파일은 **페이지가 아니라 컴포넌트 성격** 기준으로 나눈다. 게시판이면 어느 페이지에서 쓰든 `board.css`. |
-| 2. 공통 vs 페이지 | 2개 이상 페이지에서 재사용되면 공통 파일, 1회성·충돌위험·무거운 1페이지 전용이면 페이지 CSS로 분리. |
+| 2. 공통 vs 페이지 | 2개 이상 페이지에서 쓰면 공통 파일. 한 번만 쓰거나, 공통과 충돌하거나, 한 페이지 전용인데 무거우면 페이지 CSS로 분리. |
 | 3. Load order | `basic → common → sub 또는 main → 페이지 전용`. 빌드툴이 없으므로 **소스 순서가 곧 우선순위**. |
-| 4. Design tokens | `:root`에 색·폰트크기·배경·버튼·반경·그림자를 표준 이름으로. 컴포넌트에서 raw hex 금지. |
+| 4. Design tokens | `:root`에 색·폰트크기·배경·버튼·반경·그림자를 표준 이름으로. 컴포넌트에 색상값 직접 쓰기 금지. |
 | 5. Reset | 모든 기본값은 `:where()`로 특이도 0. `body *`(0,0,1)로 쓰면 폼 기본값을 덮어써 버그가 난다. |
-| 6. Page CSS 금지사항 | 페이지 전용 CSS에 `h2`·`p` 같은 태그 글로벌 셀렉터 금지 — 반드시 클래스 기반. |
+| 6. Page CSS 금지사항 | 페이지 전용 CSS에 `h2`·`p` 같은 태그 선택자 금지 — 마지막에 로드돼 사이트 전체에 영향. |
 
 기준 리셋 전문은 `references/basic-css-baseline.md`에 있습니다.
 

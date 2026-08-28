@@ -1,8 +1,8 @@
 {
   "name": "css-architecture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "빌드툴 없는 정적 사이트의 CSS 파일 구성과 디자인 토큰 — 컴포넌트 성격 기준 파일 분할, 통합·분리 판단 기준, 로드 순서, :root 변수명 표준, :where() 특이도 0 리셋.",
   "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": ["css", "architecture", "design-tokens", "reset", "specificity"]
 }

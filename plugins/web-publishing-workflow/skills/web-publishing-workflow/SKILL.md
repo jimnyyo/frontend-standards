@@ -1,6 +1,6 @@
 ---
 name: web-publishing-workflow
-description: How to plan and sequence a multi-page web publishing job BEFORE writing code — build the shared foundation first, then page structure, then responsive, then animation; present a reuse mapping and get it confirmed before coding; extract what a static mockup cannot show (motion, interaction, states). Use when a job is being scoped rather than typed: a new site or page set is starting, a design mockup or PDF has just been handed over, the user asks what order to work in, asks for a plan, or asks how to hand a design over. Not for the act of writing markup — that is the conventions skill. [한글] 코드를 쓰기 전 계획·순서·소통 방식. "새 사이트", "페이지 여러 개", "시안 받았어", "시안 줄게", "이거 어떻게 작업하지", "작업 순서", "계획 먼저", "구조부터 보여줘", "어디부터 해야 해", "견적", "일정" 요청에 사용. 마크업을 실제로 타이핑하는 단계가 아니라, 무엇을 어떤 순서로 만들지 정하는 단계에 적용.
+description: How to plan and sequence a multi-page web publishing job BEFORE writing code — build the shared foundation first, then page structure, then responsive, then animation; present a reuse mapping and get it confirmed before coding; extract what a static mockup cannot show (motion, interaction, states). Use when a job is being scoped rather than typed: a new site or page set is starting, a design mockup or PDF has just been handed over, the user asks what order to work in, asks for a plan, or asks how to hand a design over. Equally for the other side of that handover — writing or reviewing a spec, a screen definition, or a requirements list that a publisher or developer will build from, where the four things a static mockup cannot show (motion, interaction, states, live behavior) are what a spec routinely omits. Not for the act of writing markup — that is the conventions skill. [한글] 코드를 쓰기 전 계획·순서·소통 방식. 만드는 쪽과 넘기는 쪽 모두에 해당. "새 사이트", "페이지 여러 개", "시안 받았어", "시안 줄게", "이거 어떻게 작업하지", "작업 순서", "계획 먼저", "구조부터 보여줘", "어디부터 해야 해", "견적", "일정" 요청에 사용. 기획 쪽에서는 "기획서 쓰는데", "요건 정리", "화면 정의서", "스토리보드", "개발자한테 넘길 문서", "퍼블리셔한테 전달", "이 정도면 전달해도 될까", "빠진 거 없나" 요청에 사용 — 시안에 담기지 않는 움직임·인터랙션·상태·실제 동작이 기획서에서 흔히 빠지는 항목이므로 그 확인에 쓴다. 마크업을 실제로 작성하는 단계가 아니라, 그 전에 무엇을 어떤 순서로 만들지 정하는 단계에 적용.
 ---
 
 # Web publishing workflow
@@ -13,10 +13,10 @@ description: How to plan and sequence a multi-page web publishing job BEFORE wri
 |---|---|
 | 1. 가장 큰 리스크 | 다중 페이지의 실패는 코드 품질이 아니라 **일관성 붕괴**. 페이지마다 헤더 높이·분기점·모션 속도가 따로 노는 것을 막는 게 목적. |
 | 2. 레이어 순서 | 페이지를 하나씩 끝내지 말고 **공통기반 → 페이지구조 → 반응형 → 애니메이션** 순으로 가로로 쌓는다. |
-| 3. 빌드 전 매핑 | 새 페이지·큰 변경은 "재사용 매핑 + 작업 계획"을 먼저 제시하고 **확인받은 뒤** 코딩한다. |
-| 4. 시안에 없는 정보 | 시안은 정지된 한 순간. 움직임·인터랙션·상태 변화·실제 동작은 이미지에 없으므로 **코딩 전에 물어본다**. |
+| 3. 코딩 전 매핑 | 새 페이지·큰 변경은 "재사용 매핑 + 작업 계획"을 먼저 제시하고 **확인받은 뒤** 코딩한다. |
+| 4. 시안에 없는 정보 | 시안은 정지된 한 순간. 움직임·인터랙션·상태 변화·실제 동작은 이미지에 없다. 받는 쪽은 **코딩 전에 물어보고**, 넘기는 쪽은 **기획서에 적는다**. |
 | 5. 임의 진행 금지 | 확신 없는 결정, 범위 밖 작업은 멋대로 하지 않는다. 디자인은 유지하고 구조만 규약에 맞춘다. |
-| 6. 도구 분리 | 한 프로젝트는 한 도구로. 에이전트끼리 컨텍스트를 공유하지 않으므로 섞으면 인수인계 손실이 난다. |
+| 6. 도구 분리 | 한 프로젝트는 한 도구로. 도구끼리 작업 내용을 주고받지 못하므로 섞으면 앞 작업이 이어지지 않는다. |
 
 ---
 
@@ -85,14 +85,18 @@ Components can also be lifted from a sibling project in the same repo — copy a
 
 ## 4. What a mockup cannot tell you
 
-A mockup is one frozen instant. These four things are never in it, and guessing at them is where rework comes from. Ask before coding:
+A mockup is one frozen instant. These four things are never in it, and guessing at them is where rework comes from.
 
-| Missing | Ask |
+The same four work in both directions. **Building from a spec:** ask these before coding. **Writing a spec:** these are what to put in it, because they are what specs routinely omit and what the person building will come back to ask.
+
+| Missing | Ask / state it |
 |---|---|
 | **Motion** | Does anything animate on scroll-in? On page enter? On hover? |
 | **Interaction** | Where does this button go? Does this accordion open? What happens on submit? |
 | **States** | Hover / disabled / error / active — the mockup shows only the default state. |
 | **Live behavior** | Carousel autoplay, infinite scroll, polling, count-up. |
+
+When reviewing a spec or a mockup handover before it goes out, run the four as a checklist and name what is missing rather than assuming the builder will ask.
 
 Also confirm the constraints, because they change the approach rather than the details:
 

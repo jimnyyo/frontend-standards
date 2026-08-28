@@ -1,8 +1,8 @@
 {
   "name": "html-layout-conventions",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "HTML 마크업·CSS 작성 표준 규약을 Claude가 자동으로 적용하게 하는 플러그인. 레이아웃 골격, 언더스코어 네이밍과 공용 약어 사전, 모디파이어·상태·유틸 클래스, 태그 뎁스 최소화, CSS 한 줄 선언, :where() 특이도 제어.",
   "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": ["html", "css", "markup", "publishing", "conventions", "naming"]
 }

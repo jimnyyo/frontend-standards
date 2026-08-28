@@ -16,7 +16,7 @@ description: Share header, footer, side navigation and other common regions acro
 | 3. 플레이스홀더 주석 | `<div id="site-header"></div><!-- /경로/header.html -->` — 마크업만 봐도 무엇이 들어오는지 보이게. |
 | 4. 콜백 초기화 | 삽입된 DOM에 붙는 JS는 **반드시 콜백 안에서** 초기화. 밖에서 부르면 아직 없는 요소를 찾는다. |
 | 5. 현재 메뉴 | 수동 인덱스 대신 **URL 경로 매칭**으로 `active` 부여. |
-| 6. 한계 | fetch 기반이므로 `file://` 에서 안 되고 SEO·FOUC 트레이드오프가 있다. |
+| 6. 한계 | `fetch`라서 `file://`로는 안 열린다. 검색엔진이 내용을 못 읽고, 헤더가 한 박자 늦게 그려진다. |
 
 구현 전문은 `references/loadinc.md`에 있습니다.
 
