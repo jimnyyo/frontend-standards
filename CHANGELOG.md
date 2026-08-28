@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## marketplace 2.2.0 — 2026-08-28
+
+### 신규 — `event-page-embed` 1.0.0
+남의 CMS 본문 필드에 통째로 붙여 넣는 이벤트·캠페인 상세 페이지. `08/후원`(선교협력)과 `08/성결필사 영상추가` 두 작업에서 뽑아냈습니다.
+
+**나머지 5종과 전제가 반대**라 별도 스킬로 분리했습니다. 파일을 서버에 올리는 게 아니므로 파일 분할·공통 CSS·include가 전부 불가능합니다. description에 `css-architecture`·`static-site-includes`를 적용하지 말라고 명시해 두었습니다.
+
+- 삽입 블록 마커 — `.html`은 미리보기용 껍데기, 납품물은 마커 사이. `<style>`·`<script>`·`<link>` 전부 래퍼 안에
+- 접두어 스코프 — 래퍼·클래스·CSS를 하나의 접두어로. 변수는 `:root`가 아니라 래퍼에
+- 호스트 chrome 무력화 — `header:not(.<접두어>_header){display:none!important}`
+- 특이도 대응 — 템플릿이 래퍼에 거는 `img` 규칙 등을 접두어를 겹쳐 이긴다. `!important` 금지
+- 호스트 `min-width` 때문에 브라우저 창 줄이기가 유효한 모바일 테스트가 아닐 수 있음
+- 본문 필드 공유 시 PC/MO — 스타일시트는 `media='not all'`로 끄고, `<picture><source media>`는 CSS로 못 끄므로 1×1 GIF로 무력화
+- 폰트 서브셋 + 원본 CDN `src` 폴백 + 상단 폰트만 preload + 문구 수정 시 재생성 경고
+- 호스트 존중 — 전역 콜백은 덮지 말고 체이닝, `document.currentScript.parentNode` 기준 조회, JS 없이도 내용 노출
+- 날짜 리비전 파일명 (`index_260820.html`) — CMS에 사는 페이지는 파일 세트가 곧 이력
+- `references/cbs-cms.md` — 호스트 CMS 실측 기록. 다른 호스트에는 값이 아니라 **측정 항목 5가지**를 재사용
+
+---
+
 ## marketplace 2.1.0 — 2026-08-28
 
 ### 라이선스 — `UNLICENSED` → `MIT` (플러그인 5종 전부)

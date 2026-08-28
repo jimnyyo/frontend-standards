@@ -7,7 +7,7 @@ description: House rules for hand-written HTML markup and CSS — the .wrap/.hea
 
 ## 요약 (Korean summary)
 
-우리 프로젝트 HTML·CSS 작성 규약입니다. 아래 영문 본문이 실제 규칙이고, 이 요약은 무엇이 들어 있는지 빠르게 확인하는 용도입니다.
+프로젝트 HTML·CSS 작성 규약입니다. 아래 영문 본문이 실제 규칙이고, 이 요약은 무엇이 들어 있는지 빠르게 확인하는 용도입니다.
 
 | 절 | 핵심 내용 |
 |---|---|
