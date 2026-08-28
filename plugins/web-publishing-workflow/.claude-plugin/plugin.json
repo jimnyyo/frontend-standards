@@ -1,0 +1,8 @@
+{
+  "name": "web-publishing-workflow",
+  "version": "1.0.0",
+  "description": "다중 페이지 웹 퍼블리싱을 코드 작성 전에 계획하는 방식 — 공통기반→페이지구조→반응형→애니메이션 레이어 순서, 빌드 전 재사용 매핑, 시안에 담기지 않는 정보 확인.",
+  "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+  "license": "UNLICENSED",
+  "keywords": ["workflow", "planning", "publishing", "responsive", "handoff"]
+}

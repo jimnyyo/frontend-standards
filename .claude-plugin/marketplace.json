@@ -1,0 +1,66 @@
+{
+  "name": "frontend-standards",
+  "description": "프론트엔드 퍼블리싱 표준 플러그인 마켓플레이스 — 작업 순서, 마크업·CSS 규약, CSS 구성, 공통영역 include, 스크롤 모션",
+  "version": "2.0.0",
+  "owner": {
+    "name": "jimnyyo",
+    "url": "https://github.com/jimnyyo"
+  },
+  "plugins": [
+    {
+      "name": "web-publishing-workflow",
+      "displayName": "웹 퍼블리싱 작업 순서",
+      "source": "./plugins/web-publishing-workflow",
+      "version": "1.0.0",
+      "description": "코드를 쓰기 전 계획하는 방식 — 공통기반→페이지구조→반응형→애니메이션 레이어 순서, 빌드 전 재사용 매핑 확인, 시안에 담기지 않는 움직임·인터랙션·상태 확인, 한 프로젝트 한 도구.",
+      "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+      "license": "UNLICENSED",
+      "category": "development",
+      "keywords": ["workflow", "planning", "publishing", "responsive", "handoff", "작업순서", "시안"]
+    },
+    {
+      "name": "html-layout-conventions",
+      "displayName": "HTML/CSS 코딩 컨벤션",
+      "source": "./plugins/html-layout-conventions",
+      "version": "1.1.0",
+      "description": "HTML 마크업·CSS 작성 표준 규약 — 레이아웃 골격, 언더스코어 네이밍과 공용 약어 사전, 모디파이어·상태·유틸 클래스, 태그 뎁스 최소화, CSS 한 줄 선언, :where() 특이도 제어, 리셋 중복 선언 금지.",
+      "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+      "license": "UNLICENSED",
+      "category": "development",
+      "keywords": ["html", "css", "markup", "publishing", "conventions", "naming", "퍼블리싱", "코딩컨벤션"]
+    },
+    {
+      "name": "css-architecture",
+      "displayName": "CSS 파일 구성 · 디자인 토큰",
+      "source": "./plugins/css-architecture",
+      "version": "1.0.0",
+      "description": "빌드툴 없는 정적 사이트의 CSS 구성 — 컴포넌트 성격 기준 파일 분할, 공통·페이지 전용 판단 기준, 로드 순서, :root 변수명 표준, :where() 특이도 0 리셋 기준서 포함.",
+      "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+      "license": "UNLICENSED",
+      "category": "development",
+      "keywords": ["css", "architecture", "design-tokens", "reset", "specificity", "디자인토큰", "리셋"]
+    },
+    {
+      "name": "static-site-includes",
+      "displayName": "공통영역 include (헤더·푸터)",
+      "source": "./plugins/static-site-includes",
+      "version": "1.0.0",
+      "description": "빌드툴 없는 정적 사이트에서 헤더·푸터·사이드메뉴를 fetch로 공통화 — loadInc, 플레이스홀더 주석 규칙, 콜백 초기화, null 가드, 현재 메뉴 URL 자동 매칭.",
+      "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+      "license": "UNLICENSED",
+      "category": "development",
+      "keywords": ["include", "static-site", "fetch", "header", "footer", "gnb", "공통영역"]
+    },
+    {
+      "name": "scroll-reveal-motion",
+      "displayName": "스크롤 등장 모션 · 단계 플로우",
+      "source": "./plugins/scroll-reveal-motion",
+      "version": "1.0.0",
+      "description": "스크롤 진입 등장 모션과 추진체계 — data-reveal 그룹·개별 적용, IntersectionObserver threshold 0 고정, rootMargin으로만 타이밍 조절, prefers-reduced-motion 대응, 같은 줄일 때만 단계 화살표.",
+      "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+      "license": "UNLICENSED",
+      "category": "development",
+      "keywords": ["animation", "scroll-reveal", "intersection-observer", "motion", "accessibility", "스크롤애니메이션", "추진체계"]
+    }
+  ]
+}

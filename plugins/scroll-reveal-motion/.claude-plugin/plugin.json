@@ -1,0 +1,8 @@
+{
+  "name": "scroll-reveal-motion",
+  "version": "1.0.0",
+  "description": "스크롤 진입 등장 모션과 단계 플로우 — data-reveal 그룹·개별 적용, IntersectionObserver threshold 0 고정, rootMargin으로만 타이밍 조절, prefers-reduced-motion 대응.",
+  "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+  "license": "UNLICENSED",
+  "keywords": ["animation", "scroll-reveal", "intersection-observer", "motion", "accessibility"]
+}

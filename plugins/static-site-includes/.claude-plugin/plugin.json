@@ -1,0 +1,8 @@
+{
+  "name": "static-site-includes",
+  "version": "1.0.0",
+  "description": "빌드툴 없는 정적 사이트에서 헤더·푸터·사이드메뉴를 fetch로 공통화하는 패턴 — loadInc, 플레이스홀더 주석 규칙, 콜백 초기화, null 가드, 현재 메뉴 URL 자동 매칭.",
+  "author": { "name": "jimnyyo", "url": "https://github.com/jimnyyo" },
+  "license": "UNLICENSED",
+  "keywords": ["include", "static-site", "fetch", "header", "footer", "gnb"]
+}
