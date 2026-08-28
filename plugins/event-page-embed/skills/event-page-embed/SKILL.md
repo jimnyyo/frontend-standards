@@ -1,6 +1,6 @@
 ---
 name: event-page-embed
-description: Building a one-off event, campaign, or landing page that gets pasted whole into a CMS body field on a site you do not control — a single self-contained file, every class and rule scoped under one page prefix so nothing leaks either way, winning the specificity fight against the host template's own rules, splitting PC and mobile when both share one body field, subsetting fonts, and keeping dated revision files across review rounds. It also covers the two ways such a page meets the host's own header and footer: keeping them and living inside the host's container, or hiding them and supplying its own — a decision that has to be made before any layout, since full-bleed belongs to one mode and breaks the other. Use when a page will be delivered as a block to paste into an editor rather than as files on a server, and whenever an embedded page misbehaves only on one device or only inside the CMS. The file-level skills do not apply here — do not use css-architecture or static-site-includes for a page like this — but html-layout-conventions still does, with its "never redeclare what the reset handles" rule inverted, since an embedded block has no reset of its own. [한글] 남의 CMS 본문 필드에 통째로 붙여 넣는 이벤트·캠페인·랜딩 상세 페이지. "이벤트 페이지", "캠페인 페이지", "상세페이지 만들어줘", "랜딩", "에디터에 붙일 거", "본문에 넣을 코드", "한 파일로", "CMS에 넣으면 깨져", "PC만 깨져", "모바일만 멀쩡해", "원래 사이트 스타일이랑 충돌", "헤더가 두 개 나와", "헤더 푸터 살릴까 뺄까", "사이트 헤더 안 보이게" 요청에 사용. 파일을 서버에 올리는 게 아니라 블록 하나를 전달하는 작업일 때 적용. `css-architecture`·`static-site-includes`는 적용하지 않지만, `html-layout-conventions`는 그대로 적용한다 — 단 "리셋이 하는 선언은 다시 쓰지 마라"는 반대로 뒤집힌다.
+description: Building a one-off event, campaign, or landing page that gets pasted whole into a CMS body field on a site you do not control — a single self-contained file, every class and rule scoped under one page prefix so nothing leaks either way, winning the specificity fight against the host template's own rules, splitting PC and mobile when both share one body field, subsetting fonts, and keeping dated revision files across review rounds. It also covers the two ways such a page meets the host's own header and footer: keeping them and living inside the host's container, or hiding them and supplying its own — a decision that has to be made before any layout, since full-bleed belongs to one mode and breaks the other. Use when a page will be delivered as a block to paste into an editor rather than as files on a server, and whenever an embedded page misbehaves only on one device or only inside the CMS. The file-level skills do not apply here — do not use css-architecture or static-site-includes for a page like this — but html-layout-conventions still does, with its "never redeclare what the reset handles" rule inverted, since an embedded block has no reset of its own. [한글] 남의 CMS 본문 필드에 통째로 붙여 넣는 이벤트·캠페인·랜딩 상세 페이지. "이벤트 페이지", "캠페인 페이지", "상세페이지 만들어줘", "랜딩", "에디터에 붙일 거", "본문에 넣을 코드", "한 파일로", "CMS에 넣으면 깨져", "PC만 깨져", "모바일만 멀쩡해", "원래 사이트 스타일이랑 충돌", "헤더가 두 개 나와", "헤더 푸터 살릴까 뺄까", "사이트 헤더 안 보이게" 요청에 사용. 파일을 서버에 올리는 게 아니라 블록 하나를 전달하는 작업일 때 적용. `css-architecture`·`static-site-includes`는 적용하지 않지만, `html-layout-conventions`는 그대로 적용한다 — 단 "리셋이 하는 선언은 다시 쓰지 마라"는 반대로 뒤집힌다. **이 규칙은 신규 페이지용이다.** 이미 라이브인 페이지를 열었을 땐 요청받은 수정만 하고, 그 페이지가 쓰던 방식을 따른다 — 구조·클래스명을 규칙에 맞춰 바꾸자고 하지 않는다.
 ---
 
 # Event pages embedded in someone else's CMS
@@ -12,7 +12,7 @@ description: Building a one-off event, campaign, or landing page that gets paste
 | 절 | 핵심 내용 |
 |---|---|
 | 1. 전제가 다름 | 파일 분할·공통 CSS·include가 전부 불가능. 단일 파일 안에 CSS·JS를 다 넣는다. |
-| 2. 규약 적용 범위 | 네이밍·약어·상태·태그 깊이·한 줄 선언은 그대로. 페이지 골격은 적용 안 함. **"리셋이 하는 선언은 다시 쓰지 마라"는 정반대** — 내 리셋이 없으므로 직접 써야 한다. |
+| 2. 규약 적용 범위 | 네이밍·약어·상태·태그 깊이·한 줄 선언은 그대로. 페이지 골격은 적용 안 함. **"리셋이 하는 선언은 다시 쓰지 마라"는 정반대** — 내 리셋이 없으므로 직접 써야 한다. **신규 페이지용 규칙** — 라이브 페이지는 요청받은 수정만. |
 | 3. 삽입 블록 | `.html` 파일은 미리보기용 껍데기. 실제 납품물은 마커 사이. 경계를 주석으로 명시. |
 | 4. 스코프 | 페이지 고유 접두어 하나로 래퍼·클래스·CSS를 전부 감싼다. 변수도 `:root` 아님. |
 | 5. 호스트 chrome | **유지할지 대체할지 레이아웃 짜기 전에 정한다.** 유지면 full-bleed 금지·호스트 폭 준수, 대체면 `:not()`으로 숨기고 full-bleed 필요. |
@@ -72,7 +72,13 @@ So inside an embedded block you must declare them yourself — scoped to the wra
 
 Keep it to what the page actually depends on rather than porting a whole reset — every rule here is one more thing that can collide. And note that it is a **scoped** reset: a bare `ul { list-style: none }` would restyle the host's navigation.
 
-The reveal state class stays `in` for new pages, matching the conventions. Existing pages that shipped with `in-view` keep it — do not rename a live page's classes to match.
+### These rules are for new pages
+
+**Never retrofit a page that is already live.** Everything here — the scoped reset, the prefix scheme, the state class names, the chrome mode — applies to pages being built from now on.
+
+An existing page opened for a small fix gets **that fix only**, written in whatever style the page already uses. A live campaign page is running in a CMS where a class rename means re-pasting the whole block and re-verifying it on both templates, for no visible gain. If a page's existing approach conflicts with a rule here, follow the page and say so rather than mixing two styles into one file.
+
+Concretely: a page that shipped with `in-view` keeps `in-view`. New pages use `in`, matching the conventions.
 
 ## 3. The file is a harness; the block is the deliverable
 

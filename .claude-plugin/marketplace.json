@@ -1,7 +1,7 @@
 {
   "name": "frontend-standards",
   "description": "프론트엔드 퍼블리싱 표준 플러그인 마켓플레이스 — 작업 순서, 마크업·CSS 규약, CSS 구성, 공통영역 include, 스크롤 모션, CMS 삽입형 이벤트 페이지",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "owner": {
     "name": "jimnyyo",
     "url": "https://github.com/jimnyyo"
@@ -122,7 +122,7 @@
       "name": "event-page-embed",
       "displayName": "CMS 삽입형 이벤트 페이지",
       "source": "./plugins/event-page-embed",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "남의 CMS 본문 필드에 통째로 붙여 넣는 이벤트·캠페인 상세 페이지 — 단일 파일, 접두어 스코프, 호스트 header/footer 유지·대체 두 모드, 템플릿 특이도 대응, 본문 필드를 공유하는 PC/MO 분기, 폰트 서브셋, 날짜 리비전.",
       "author": {
         "name": "jimnyyo",
